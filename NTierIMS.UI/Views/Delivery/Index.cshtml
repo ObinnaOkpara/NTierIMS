@@ -1,0 +1,57 @@
+﻿@model IEnumerable<NTierIMS.Core.Entities.Delivery>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InventoryItem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warehouse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfItemDelivered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryItem.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Warehouse.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfItemDelivered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.FullName)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

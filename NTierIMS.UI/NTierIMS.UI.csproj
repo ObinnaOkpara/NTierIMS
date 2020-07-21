@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>aspnet-NTierIMS.UI-0305C9A5-45A1-479F-ACE2-922DD93C0CBC</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\NTierIMS.Core\NTierIMS.Core.csproj" />
+    <ProjectReference Include="..\NTierIMS.Infrastructure\NTierIMS.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
