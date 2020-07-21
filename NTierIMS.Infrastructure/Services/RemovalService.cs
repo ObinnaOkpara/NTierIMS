@@ -22,7 +22,7 @@ namespace NTierIMS.Infrastructure.Services
         public async Task<string> AddAsync(Removal item)
         {
             var warehouseItem = await _dbContext.WarehouseInventoryItems
-                .FirstOrDefaultAsync(m => m.InventoryItemId == item.InventoryItemId || m.WarehouseId == item.WarehouseId);
+                .FirstOrDefaultAsync(m => m.InventoryItemId == item.InventoryItemId && m.WarehouseId == item.WarehouseId);
 
             if (warehouseItem != null)
             {
