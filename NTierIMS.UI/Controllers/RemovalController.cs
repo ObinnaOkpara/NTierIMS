@@ -72,7 +72,8 @@ namespace NTierIMS.UI.Controllers
                 {
                     ViewBag.Warehouses = (await WarehouseService.ListAllAsync()).Select(m => new SelectListItem(m.Name, m.Id.ToString()));
                     ViewBag.InventoryItems = (await inventoryItemService.ListAllAsync()).Select(m => new SelectListItem(m.Name, m.Id.ToString()));
-                    ViewBag.Error = rtn;
+                    
+                    ModelState.AddModelError(string.Empty, rtn);
                     return View(removal);
                 }
             }
