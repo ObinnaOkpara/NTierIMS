@@ -17,15 +17,20 @@ namespace NTierIMS.Core.Entities
         public string Description { get; set; }
         [StringLength(100, ErrorMessage = "Maximum Lenght is 100 characters")]
         [Required(ErrorMessage = "This Field is required")]
+        [Display(Name = "Unit of Measurement")]
         public string UnitOfMeasurement { get; set; }
 
+        [Display(Name = "Date Added")]
         public DateTime? DateAdded { get; set; } = DateTime.Now;
+        [Display(Name = "Last Delivery")]
         public DateTime? LastDelivery { get; set; }
 
         [ForeignKey("Employee")]
+        [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
 
         [NotMapped]
+        [Display(Name = "Total Items in Stock")]
         public int TotalItemInStock { get { return WarehouseInventoryItems.Sum(m => m.ItemCount); } }
 
 

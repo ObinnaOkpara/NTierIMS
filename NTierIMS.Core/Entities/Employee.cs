@@ -12,9 +12,9 @@ namespace NTierIMS.Core.Entities
         [Required(ErrorMessage = "This Field is required")]
         public string FullName { get; set; }
 
-        public Delivery DeliveriesRecorded { get; set; }
-        public Removal RemovalsRecorded { get; set; }
-        public Warehouse WarehouseCreated { get; set; }
-        public InventoryItem InventoryItemCreated { get; set; }
+        public List<Delivery> DeliveriesRecorded { get; set; } = new List<Delivery>();
+        public List<Removal> RemovalsRecorded { get; set; } = new List<Removal>();
+        public List<Warehouse> WarehouseCreated { get; set; } = new List<Warehouse>();
+        public List<InventoryItem> InventoryItemCreated { get; set; } = new List<InventoryItem>();
     }
 }
